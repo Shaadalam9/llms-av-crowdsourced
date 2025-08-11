@@ -37,13 +37,13 @@ class Analysis:
         'llava:13b': 'LLaVA-13B',
         'llava:34b': 'LLaVA-34B',
         'llava-llama3': 'LLaVA-LLaMA-3',
-        'llama3.2-vision': 'LLaMA 3.2 Visionn',
+        'llama3.2-vision': 'LLaMA 3.2 Vision',
         'moondream': 'Moondream',
         'bakllava': 'BakLLaVA',
         'granite3.2-vision': 'Granite Vision 3.2',
         'llava-phi3': 'LLaVA-Phi3',
-        'gemma3:12b': 'Gemma 3: 12B',
-        'gemma3:27b': 'Gemma 3: 27B',
+        'gemma3:12b': 'Gemma3: 12B',
+        'gemma3:27b': 'Gemma3: 27B',
         'deepseek-vl2': 'DeepSeek-VL2',
         'gpt-4o': 'ChatGPT-4o',
         'cross': 'Cross',
@@ -242,12 +242,15 @@ class Analysis:
         ehmi_df = pd.read_csv(ehmi_csv_path).rename(columns={"mean": "ehmi_mean"})
 
         mapping_df["id"] = mapping_df["id"].astype(str)
+        # First, remove "image_" and ".jpg"
         avg_df["image"] = avg_df["image"].astype(str).str.replace("image_", "", regex=False)
+        avg_df["image"] = avg_df["image"].str.replace(".jpg", "", regex=False).str.strip()
 
         mapping_df["text"] = mapping_df["text"].str.upper()
         ehmi_df["eHMI"] = ehmi_df["eHMI"].str.upper()
 
         merged_df = pd.merge(avg_df, mapping_df, left_on="image", right_on="id", how="inner")
+
         merged_df = pd.merge(merged_df, ehmi_df, left_on="text", right_on="eHMI", how="inner")
         numeric_columns = [col for col in avg_df.columns if col != "image"]
 
@@ -267,24 +270,24 @@ class Analysis:
                     text="",
                     font=dict(
                         family=font_family,
-                        size=font_size
+                        size=font_size+34
                     )
                 ),
                 font=dict(
                     family=font_family,
-                    size=font_size
+                    size=font_size+34
                 ),
                 xaxis=dict(
                     title=dict(
                         text="Mean response from the participants",
                         font=dict(
                             family=font_family,
-                            size=font_size
+                            size=font_size+34
                         )
                     ),
                     tickfont=dict(
                         family=font_family,
-                        size=font_size
+                        size=font_size+34
                     ),
                     range=[0, 100]
                 ),
@@ -293,19 +296,19 @@ class Analysis:
                         text=self.RENAME_MAP.get(col, col),
                         font=dict(
                             family=font_family,
-                            size=font_size
+                            size=font_size+34
                         )
                     ),
                     tickfont=dict(
                         family=font_family,
-                        size=font_size
+                        size=font_size+34
                     ),
                     range=[0, 100]
                 ),
                 legend=dict(
                     font=dict(
                         family=font_family,
-                        size=font_size
+                        size=font_size+34
                     )
                 )
             )
@@ -342,11 +345,9 @@ class Analysis:
 
         # Columns to analyse
         selected_columns = [
-            'minicpm-v', 'llava:13b', 'llava:34b', 'llava-llama3',
-            'llama3.2-vision', 'moondream', 'bakllava', 'granite3.2-vision',
-            'llava-phi3', 'gemma3:12b', 'gemma3:27b', 'deepseek-vl2', 'gpt-4o',
-            'cross', 'wait', 'egocentric', 'allocentric', 'med', 'ehmi_mean',
-            'lang_encoded'  # Include encoded language
+            'bakllava', 'gpt-4o', 'deepseek-vl2', 'gemma3:12b', 'gemma3:27b', 'granite3.2-vision', 'llava:13b',
+            'llava:34b', 'llava-llama3', 'llava-phi3', 'llama3.2-vision', 'moondream', 'minicpm-v', 'cross', 'wait',
+            'egocentric', 'allocentric', 'med', 'ehmi_mean', 'lang_encoded'
         ]
 
         df_selected = df[selected_columns]
@@ -461,8 +462,8 @@ class Analysis:
 if __name__ == "__main__":
     analysis = Analysis()
     # Loop over both configurations
-    for memory_type in ["with_memory", "without_memory"]:
-        # client.process_csv_files()
+    for memory_type in ["with_memory"]:
+        client.process_csv_files()
         folder_path = os.path.join(output_path, memory_type, "analysed")
 
         # Skip if folder doesn't exist or is empty

@@ -5,6 +5,11 @@
 ![LLM Personas](figures/LLMs_personas.png)
 A Ghibli-style persona illustration of the Large Language Models.😁
 
+## Citation
+If you use the gans-traffic for academic work please cite the following paper:
+
+> Alam, M. S., & Bazilinskyy, P. (2025). Cross or Nah? LLMs Get in the Mindset of a Pedestrian in front of Automated Car with an eHMI. 17th International Conference on Automotive User Interfaces and Interactive Vehicular Applications. Brisbane, QLD, Australia. https://doi.org/10.1145/3744335.3758477
+
 ## Usage of the code
 The code is open-source and free to use. It is aimed for, but not limited to, academic research. We welcome forking of this repository, pull requests, and any contributions in the spirit of open science and open-source code 😍😄 .
 For collaboration or inquiries, contact:
@@ -71,6 +76,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 - **font_family** [String]: Lists the font families to be used in visualisation outputs (e.g., `"Open Sans, verdana, arial, sans-serif"`).
 - **font_size** [Integer]: Sets the base font size for graphs and other visual elements (e.g., `12`).
 - **random_seed** [List of Integers]: A list of seed values for reproducible runs (e.g., `[42]`).
+- **process_csv_files** [Boolean]: 
 - **use_history** [Boolean]: Determines whether conversation history is maintained and utilised during processing. When `true`, previous interactions are stored and influence current model responses.
 - **true_history_files** [Boolean]: Controls whether history files (conversation logs and memory) are retained after processing. If set to `false`, these files are deleted after processing.
 - **max_memory_messages** [Integer]: Specifies the maximum number of previous conversation messages to retain in memory for context (e.g., `6`).
