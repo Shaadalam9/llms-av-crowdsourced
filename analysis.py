@@ -608,7 +608,7 @@ if __name__ == "__main__":
         )
 
         # Step 3: Create individual scatter plots (one per LLM score column)
-        figures = analysis.plot_individual_ehmi_vs_llm(
+        analysis.plot_individual_ehmi_vs_llm(
             mapping_csv_path=os.path.join(crowdsourced_data, "mapping.csv"),
             ehmi_csv_path=os.path.join(crowdsourced_data, "ehmis.csv"),
             avg_df=avg_df,
