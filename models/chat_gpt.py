@@ -97,7 +97,7 @@ class GPT_ImageAnalyser:
         Returns:
             None: Writes memory data to disk; does not return a value.
         """
-        # Convert message objects to dictionary format for serialization
+        # Convert message objects to dictionary format for serialisation
         messages = messages_to_dict(self.memory.chat_memory.messages)
 
         # Write serialised messages to file in JSON format

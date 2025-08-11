@@ -224,8 +224,8 @@ class Analysis:
         """
         Plot eHMI mean values against LLM score columns for each text category.
 
-        This method merges averaged LLM scores with mapping and eHMI data, 
-        then creates an interactive scatter plot comparing eHMI mean values 
+        This method merges averaged LLM scores with mapping and eHMI data,
+        then creates an interactive scatter plot comparing eHMI mean values
         to multiple LLM score columns. Each point is labeled by its text category.
 
         Args:
@@ -320,7 +320,7 @@ class Analysis:
 
         This method:
         1. Reads mapping and eHMI CSV files.
-        2. Cleans and normalizes IDs, image names, and text fields for consistent merging.
+        2. Cleans and normalises IDs, image names, and text fields for consistent merging.
         3. Merges averaged LLM scores with mapping and eHMI data.
         4. Generates one scatter plot per numeric LLM score column, plotting:
            - X-axis: eHMI mean values (participant responses)
@@ -352,7 +352,7 @@ class Analysis:
             .str.strip()
         )
 
-        # Normalize text columns to uppercase for consistent merging
+        # Normalise text columns to uppercase for consistent merging
         mapping_df["text"] = mapping_df["text"].str.upper()
         ehmi_df["eHMI"] = ehmi_df["eHMI"].str.upper()
 
@@ -375,7 +375,7 @@ class Analysis:
                 marker=dict(color='red', size=14)          # Marker style
             ))
 
-            # Customize plot layout
+            # Customise plot layout
             fig.update_layout(
                 title=dict(
                     text="",

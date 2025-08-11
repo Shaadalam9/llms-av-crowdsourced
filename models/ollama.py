@@ -437,7 +437,7 @@ class OllamaClient:
     def process_csv_files(self):
         """
         Process CSV files in the defined subfolders ('with_memory' and 'without_memory')
-        by generating ratings for each text cell (excluding the 'image' column) and saving 
+        by generating ratings for each text cell (excluding the 'image' column) and saving
         the results in an 'analysed' subfolder.
         """
         sub_folders = ["with_memory", "without_memory"]
