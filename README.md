@@ -93,146 +93,123 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 ## Results
 
-### Without utilising the past history
-
-[![Response from BakLLaVA vs crowdsourcing results](figures/scatter_plot_bakllava_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_bakllava_without_memory.html)  
-**How BakLLaVA interprets AV scenes vs how people responded – without memory context**
+### Model-by-Model Comparison (Without vs With Past History)
 
 ---
 
-[![Response from Gemma3 12B vs crowdsourcing results](figures/scatter_plot_gemma3:12b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:12b_without_memory.html)  
-**How Gemma3 12B interprets AV scenes vs how people responded – without memory context**
+#### **BakLLaVA**
+
+| Without Past History | With Past History |
+|---|---|
+| [![BakLLaVA without memory](figures/scatter_plot_bakllava_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_bakllava_without_memory.html)<br>**Without memory context** | [![BakLLaVA with memory](figures/scatter_plot_bakllava_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_bakllava_with_memory.html)<br>**With memory context** |
 
 ---
 
-[![Response from Gemma3 27B vs crowdsourcing results](figures/scatter_plot_gemma3:27b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:27b_without_memory.html)  
-**How Gemma3 27B interprets AV scenes vs how people responded – without memory context**
+#### **Gemma3 12B**
+
+| Without Past History | With Past History |
+|---|---|
+| [![Gemma3 12B without memory](figures/scatter_plot_gemma3:12b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:12b_without_memory.html) | [![Gemma3 12B with memory](figures/scatter_plot_gemma3:12b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:12b_with_memory.html) |
 
 ---
 
-[![Response from Granite3.2 Vision vs crowdsourcing results](figures/scatter_plot_granite3.2-vision_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_granite3.2-vision_without_memory.html)  
-**How Granite3.2 Vision interprets AV scenes vs how people responded – without memory context**
+#### **Gemma3 27B**
+
+| Without Past History | With Past History |
+|---|---|
+| [![Gemma3 27B without memory](figures/scatter_plot_gemma3:27b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:27b_without_memory.html) | [![Gemma3 27B with memory](figures/scatter_plot_gemma3:27b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:27b_with_memory.html) |
 
 ---
 
-[![Response from LLaMA3.2 Vision vs crowdsourcing results](figures/scatter_plot_llama3.2-vision_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llama3.2-vision_without_memory.html)  
-**How LLaMA3.2 Vision interprets AV scenes vs how people responded – without memory context**
+#### **Granite3.2 Vision**
+
+| Without Past History | With Past History |
+|---|---|
+| [![Granite3.2 Vision without memory](figures/scatter_plot_granite3.2-vision_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_granite3.2-vision_without_memory.html) | [![Granite3.2 Vision with memory](figures/scatter_plot_granite3.2-vision_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_granite3.2-vision_with_memory.html) |
 
 ---
 
-[![Response from LLaVA-LLaMA3 vs crowdsourcing results](figures/scatter_plot_llava-llama3_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-llama3_without_memory.html)  
-**How LLaVA-LLaMA3 interprets AV scenes vs how people responded – without memory context**
+#### **LLaMA3.2 Vision**
+
+| Without Past History | With Past History |
+|---|---|
+| [![LLaMA3.2 Vision without memory](figures/scatter_plot_llama3.2-vision_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llama3.2-vision_without_memory.html) | [![LLaMA3.2 Vision with memory](figures/scatter_plot_llama3.2-vision_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llama3.2-vision_with_memory.html) |
 
 ---
 
-[![Response from LLaVA-Phi3 vs crowdsourcing results](figures/scatter_plot_llava-phi3_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-phi3_without_memory.html)  
-**How LLaVA-Phi3 interprets AV scenes vs how people responded – without memory context**
+#### **LLaVA-LLaMA3**
+
+| Without Past History | With Past History |
+|---|---|
+| [![LLaVA-LLaMA3 without memory](figures/scatter_plot_llava-llama3_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-llama3_without_memory.html) | [![LLaVA-LLaMA3 with memory](figures/scatter_plot_llava-llama3_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-llama3_with_memory.html) |
 
 ---
 
-[![Response from LLaVA 13B vs crowdsourcing results](figures/scatter_plot_llava:13b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:13b_without_memory.html)  
-**How LLaVA 13B interprets AV scenes vs how people responded – without memory context**
+#### **LLaVA-Phi3**
+
+| Without Past History | With Past History |
+|---|---|
+| [![LLaVA-Phi3 without memory](figures/scatter_plot_llava-phi3_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-phi3_without_memory.html) | [![LLaVA-Phi3 with memory](figures/scatter_plot_llava-phi3_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-phi3_with_memory.html) |
 
 ---
 
-[![Response from LLaVA 34B vs crowdsourcing results](figures/scatter_plot_llava:34b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:34b_without_memory.html)  
-**How LLaVA 34B interprets AV scenes vs how people responded – without memory context**
+#### **LLaVA 13B**
+
+| Without Past History | With Past History |
+|---|---|
+| [![LLaVA 13B without memory](figures/scatter_plot_llava:13b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:13b_without_memory.html) | [![LLaVA 13B with memory](figures/scatter_plot_llava:13b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:13b_with_memory.html) |
 
 ---
 
-[![Response from MiniCPM-V vs crowdsourcing results](figures/scatter_plot_minicpm-v_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_minicpm-v_without_memory.html)  
-**How MiniCPM-V interprets AV scenes vs how people responded – without memory context**
+#### **LLaVA 34B**
+
+| Without Past History | With Past History |
+|---|---|
+| [![LLaVA 34B without memory](figures/scatter_plot_llava:34b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:34b_without_memory.html) | [![LLaVA 34B with memory](figures/scatter_plot_llava:34b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:34b_with_memory.html) |
 
 ---
 
-[![Response from MoonDream vs crowdsourcing results](figures/scatter_plot_moondream_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_moondream_without_memory.html)  
-**How MoonDream interprets AV scenes vs how people responded – without memory context**
+#### **MiniCPM-V**
+
+| Without Past History | With Past History |
+|---|---|
+| [![MiniCPM-V without memory](figures/scatter_plot_minicpm-v_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_minicpm-v_without_memory.html) | [![MiniCPM-V with memory](figures/scatter_plot_minicpm-v_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_minicpm-v_with_memory.html) |
 
 ---
 
-[![Response from DeepSeek VL2 vs crowdsourcing results](figures/scatter_plot_deepseek-vl2_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_deepseek-vl2_without_memory.html)  
-**How DeepSeek VL2 interprets AV scenes vs how people responded – without memory context**
+#### **MoonDream**
+
+| Without Past History | With Past History |
+|---|---|
+| [![MoonDream without memory](figures/scatter_plot_moondream_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_moondream_without_memory.html) | [![MoonDream with memory](figures/scatter_plot_moondream_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_moondream_with_memory.html) |
 
 ---
 
-[![Response from all LLMs vs crowdsourcing results](figures/merged_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/merged_without_memory.html)  
-**How all LLMs compare collectively to human responses – without memory context**
+#### **DeepSeek VL2**
+
+| Without Past History | With Past History |
+|---|---|
+| [![DeepSeek VL2 without memory](figures/scatter_plot_deepseek-vl2_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_deepseek-vl2_without_memory.html) | [![DeepSeek VL2 with memory](figures/scatter_plot_deepseek-vl2_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_deepseek-vl2_with_memory.html) |
 
 ---
 
-[![Correlation Matrix](figures/spearman_correlation_matrix_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/spearman_correlation_matrix_without_memory.html)  
-**Correlation matrix of all models' responses compared to human data – without memory context**
+#### **All Models (Merged)**
 
-
-### Utilising the past history
-
-[![Response from BakLLaVA vs crowdsourcing results](figures/scatter_plot_bakllava_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_bakllava_with_memory.html)  
-**How BakLLaVA interprets AV scenes vs how people responded – with memory context**
+| Without Past History | With Past History |
+|---|---|
+| [![All models without memory](figures/merged_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/merged_without_memory.html) | [![All models with memory](figures/merged_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/merged_with_memory.html) |
 
 ---
 
-[![Response from Gemma3 12B vs crowdsourcing results](figures/scatter_plot_gemma3:12b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:12b_with_memory.html)  
-**How Gemma3 12B interprets AV scenes vs how people responded – with memory context**
+#### **Correlation Matrix**
 
----
+**Without Past History**  
+[![Correlation matrix without memory](figures/spearman_correlation_matrix_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/spearman_correlation_matrix_without_memory.html)  
 
-[![Response from Gemma3 27B vs crowdsourcing results](figures/scatter_plot_gemma3:27b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:27b_with_memory.html)  
-**How Gemma3 27B interprets AV scenes vs how people responded – with memory context**
+**With Past History**  
+[![Correlation matrix with memory](figures/spearman_correlation_matrix_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/spearman_correlation_matrix_with_memory.html)  
 
----
 
-[![Response from Granite3.2 Vision vs crowdsourcing results](figures/scatter_plot_granite3.2-vision_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_granite3.2-vision_with_memory.html)  
-**How Granite3.2 Vision interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from LLaMA3.2 Vision vs crowdsourcing results](figures/scatter_plot_llama3.2-vision_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llama3.2-vision_with_memory.html)  
-**How LLaMA3.2 Vision interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from LLaVA-LLaMA3 vs crowdsourcing results](figures/scatter_plot_llava-llama3_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-llama3_with_memory.html)  
-**How LLaVA-LLaMA3 interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from LLaVA-Phi3 vs crowdsourcing results](figures/scatter_plot_llava-phi3_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-phi3_with_memory.html)  
-**How LLaVA-Phi3 interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from LLaVA 13B vs crowdsourcing results](figures/scatter_plot_llava:13b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:13b_with_memory.html)  
-**How LLaVA 13B interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from LLaVA 34B vs crowdsourcing results](figures/scatter_plot_llava:34b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:34b_with_memory.html)  
-**How LLaVA 34B interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from MiniCPM-V vs crowdsourcing results](figures/scatter_plot_minicpm-v_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_minicpm-v_with_memory.html)  
-**How MiniCPM-V interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from MoonDream vs crowdsourcing results](figures/scatter_plot_moondream_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_moondream_with_memory.html)  
-**How MoonDream interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from DeepSeek VL2 vs crowdsourcing results](figures/scatter_plot_deepseek-vl2_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_deepseek-vl2_with_memory.html)  
-**How DeepSeek VL2 interprets AV scenes vs how people responded – with memory context**
-
----
-
-[![Response from all LLMs vs crowdsourcing results](figures/merged_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/merged_with_memory.html)  
-**How all LLMs compare collectively to human responses – with memory context**
-
----
-
-[![Correlation Matrix](figures/spearman_correlation_matrix_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/spearman_correlation_matrix_with_memory.html)  
-**Correlation matrix of all models' responses compared to human data – with memory context**
 
 
 ## License
