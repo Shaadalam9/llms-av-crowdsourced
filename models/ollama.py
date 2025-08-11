@@ -21,6 +21,8 @@ from custom_logger import CustomLogger
 from langchain.memory import ConversationBufferMemory
 from langchain.schema import messages_from_dict, messages_to_dict
 
+data_folder = common.get_configs("data")
+
 logs(show_level='info', show_color=True)
 logger = CustomLogger(__name__)  # use custom logger
 
@@ -52,10 +54,11 @@ class OllamaClient:
         self.port = port
         self.first_run = True  # Indicator for the first run (for history usage)
         self.url = f"http://{self.host}:{self.port}/api/generate"
-        self.history_file = os.path.join(common.get_configs("output"), "ollama_image_history.json")
-        self.memory_file = os.path.join(common.get_configs("output"), "ollama_memory.json")
+        self.history_file = os.path.join(data_folder, "ollama_image_history.json")
+        self.memory_file = os.path.join(data_folder, "ollama_memory.json")
+
         # Default output_file is now overridden in generate() based on seed.
-        self.output_file = os.path.join(common.get_configs("output"), "output.csv")
+        self.output_file = os.path.join(data_folder, "output.csv")
 
         self.use_history = use_history
         self.max_memory_messages = max_memory_messages
@@ -76,9 +79,8 @@ class OllamaClient:
         Delete old history and memory files if they exist.
         This helps ensure a clean state between runs.
         """
-        output_folder = common.get_configs("output")
-        history_path = os.path.join(output_folder, "ollama_image_history.json")
-        memory_path = os.path.join(output_folder, "ollama_memory.json")
+        history_path = os.path.join(data_folder, "ollama_image_history.json")
+        memory_path = os.path.join(data_folder, "ollama_memory.json")
 
         if os.path.exists(history_path):
             os.remove(history_path)
@@ -254,7 +256,7 @@ class OllamaClient:
 
         # Set output file based on the seed if not explicitly provided.
         if output_csv is None:
-            output_csv = os.path.join(common.get_configs("output"), f"output_{seed}.csv")
+            output_csv = os.path.join(data_folder, f"output_{seed}.csv")
 
         # If no images are provided, exit the function.
         if not image_paths:
@@ -432,7 +434,7 @@ class OllamaClient:
             return float(num_str) if '.' in num_str else int(num_str)
         return None
 
-    def process_csv_files(self, output=common.get_configs("output")):
+    def process_csv_files(self):
         """
         Process CSV files in the defined subfolders ('with_memory' and 'without_memory')
         by generating ratings for each text cell (excluding the 'image' column) and saving 
@@ -441,7 +443,7 @@ class OllamaClient:
         sub_folders = ["with_memory", "without_memory"]
 
         for sub_folder in sub_folders:
-            folder_path = os.path.join(output, sub_folder)
+            folder_path = os.path.join(data_folder, sub_folder)
             if not os.path.exists(folder_path):
                 logger.info(f"Folder not found: {folder_path}")
                 continue

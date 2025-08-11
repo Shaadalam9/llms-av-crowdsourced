@@ -1,3 +1,4 @@
+# from Shadab Alam (md_shadab_alam@outlook.com)
 from models.ollama import OllamaClient
 from models.chat_gpt import GPT_ImageAnalyser
 from models.deepseek import VisualQuestionAnswering
@@ -20,7 +21,7 @@ else:
     folder_name = "without_memory"
 
 # Define the output directory and create the specific subdirectory
-dir_path = os.path.join(common.get_configs("output"), folder_name)
+dir_path = os.path.join(common.get_configs("data"), folder_name)
 os.makedirs(dir_path, exist_ok=True)
 logger.info(f"Created folder: {dir_path}")
 
