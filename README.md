@@ -74,7 +74,7 @@ uv --version
 **Step 4:** Clone the repository:
 ```command line
 git clone https://github.com/Shaadalam9/llms-av-crowdsourced
-llms-av-crowdsourced
+cd llms-av-crowdsourced
 ```
 
 **Step 5:** Ensure correct Python version. If you don’t already have Python 3.9.19 installed, let `uv` fetch it:

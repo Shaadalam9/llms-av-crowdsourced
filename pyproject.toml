@@ -5,7 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = "==3.9.21"
 dependencies = [
+    "attrdict==2.0.1",
     "deepseek-vl==0.0.1.dev0",
+    "einops==0.8.1",
     "huggingface-hub==0.29.3",
     "kaleido==0.2.1",
     "langchain==0.3.21",
@@ -15,6 +17,7 @@ dependencies = [
     "plotly==5.18.0",
     "pyyaml==6.0.2",
     "requests==2.32.3",
+    "timm==1.0.15",
     "torch==2.1.0",
     "torchvision==0.16.0",
     "tqdm==4.67.1",

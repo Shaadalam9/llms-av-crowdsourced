@@ -36,6 +36,18 @@ wheels = [
 ]
 
 [[package]]
+name = "attrdict"
+version = "2.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "six" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/3f/72/614aae677d28e81a5bf830fadcf580803876ef76e0306902d3ca5790cd9a/attrdict-2.0.1.tar.gz", hash = "sha256:35c90698b55c683946091177177a9e9c0713a0860f0e049febd72649ccd77b70", size = 9593, upload-time = "2019-02-01T22:33:58.493Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ef/97/28fe7e68bc7adfce67d4339756e85e9fcf3c6fd7f0c0781695352b70472c/attrdict-2.0.1-py2.py3-none-any.whl", hash = "sha256:9432e3498c74ff7e1b20b3d93b45d766b71cbffa90923496f82c4ae38b92be34", size = 9946, upload-time = "2019-02-01T22:33:56.508Z" },
+]
+
+[[package]]
 name = "certifi"
 version = "2025.8.3"
 source = { registry = "https://pypi.org/simple" }
@@ -114,6 +126,15 @@ wheels = [
 ]
 
 [[package]]
+name = "einops"
+version = "0.8.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/e5/81/df4fbe24dff8ba3934af99044188e20a98ed441ad17a274539b74e82e126/einops-0.8.1.tar.gz", hash = "sha256:de5d960a7a761225532e0f1959e5315ebeafc0cd43394732f103ca44b9837e84", size = 54805, upload-time = "2025-02-09T03:17:00.434Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/87/62/9773de14fe6c45c23649e98b83231fffd7b9892b6cf863251dc2afa73643/einops-0.8.1-py3-none-any.whl", hash = "sha256:919387eb55330f5757c6bea9165c5ff5cfe63a642682ea788a6d472576d81737", size = 64359, upload-time = "2025-02-09T03:17:01.998Z" },
+]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -148,7 +169,9 @@ name = "gpt-av-crowdsourced"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "attrdict" },
     { name = "deepseek-vl" },
+    { name = "einops" },
     { name = "huggingface-hub" },
     { name = "kaleido" },
     { name = "langchain" },
@@ -158,6 +181,7 @@ dependencies = [
     { name = "plotly" },
     { name = "pyyaml" },
     { name = "requests" },
+    { name = "timm" },
     { name = "torch" },
     { name = "torchvision" },
     { name = "tqdm" },
@@ -167,7 +191,9 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "attrdict", specifier = "==2.0.1" },
     { name = "deepseek-vl", specifier = "==0.0.1.dev0" },
+    { name = "einops", specifier = "==0.8.1" },
     { name = "huggingface-hub", specifier = "==0.29.3" },
     { name = "kaleido", specifier = "==0.2.1" },
     { name = "langchain", specifier = "==0.3.21" },
@@ -177,6 +203,7 @@ requires-dist = [
     { name = "plotly", specifier = "==5.18.0" },
     { name = "pyyaml", specifier = "==6.0.2" },
     { name = "requests", specifier = "==2.32.3" },
+    { name = "timm", specifier = "==1.0.15" },
     { name = "torch", specifier = "==2.1.0" },
     { name = "torchvision", specifier = "==0.16.0" },
     { name = "tqdm", specifier = "==4.67.1" },
@@ -888,6 +915,22 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/0a/d4/2b0cd0fe285e14b36db076e78c93766ff1d529d70408bd1d2a5a84f1d929/tenacity-9.1.2.tar.gz", hash = "sha256:1169d376c297e7de388d18b4481760d478b0e99a777cad3a9c86e556f4b697cb", size = 48036, upload-time = "2025-04-02T08:25:09.966Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e5/30/643397144bfbfec6f6ef821f36f33e57d35946c44a2352d3c9f0ae847619/tenacity-9.1.2-py3-none-any.whl", hash = "sha256:f77bf36710d8b73a50b2dd155c97b870017ad21afe6ab300326b0371b3b05138", size = 28248, upload-time = "2025-04-02T08:25:07.678Z" },
+]
+
+[[package]]
+name = "timm"
+version = "1.0.15"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "huggingface-hub" },
+    { name = "pyyaml" },
+    { name = "safetensors" },
+    { name = "torch" },
+    { name = "torchvision" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/bc/0c/66b0f9b4a4cb9ffdac7b52b17b37c7d3c4f75623b469e388b0c6d89b4e88/timm-1.0.15.tar.gz", hash = "sha256:756a3bc30c96565f056e608a9b559daed904617eaadb6be536f96874879b1055", size = 2230258, upload-time = "2025-02-23T05:05:55.959Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6c/d0/179abca8b984b3deefd996f362b612c39da73b60f685921e6cd58b6125b4/timm-1.0.15-py3-none-any.whl", hash = "sha256:5a3dc460c24e322ecc7fd1f3e3eb112423ddee320cb059cc1956fbc9731748ef", size = 2361373, upload-time = "2025-02-23T05:05:53.601Z" },
 ]
 
 [[package]]
