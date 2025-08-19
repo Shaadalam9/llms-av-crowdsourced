@@ -5,61 +5,112 @@
 ![LLM Personas](figures/LLMs_personas.png)
 A Ghibli-style persona illustration of the Large Language Models.😁
 
+This study evaluates the effectiveness of large language model-based personas for assessing external Human-Machine Interfaces (eHMIs) in automated vehicles. 13 different models namely BakLLaVA, ChatGPT-4o, DeepSeek-VL2-Tiny, Gemma3:12B, Gemma3:27B, Granite Vision 3.2, LLaMA 3.2 Vision, LLaVA-13B, LLaVA-34B, LLaVA-LLaMA-3, LLaVA-Phi3, MiniCPM-V and Moondream were tasked with simulating pedestrian decision making for 227 vehicle images equipped with eHMI. Confidence scores (0-100) were collected under two conditions: no memory (images independently assessed) and memory-enabled (conversation history preserved), each in 15 independent trials. The model outputs were compared with the ratings of 1,438 human participants. Gemma3:27B achieved the highest correlation with humans without memory (r = 0.85), while ChatGPT-4o performed best with memory (r = 0.81). DeepSeek-VL2-Tiny and BakLLaVA showed little sensitivity to context, and LLaVA-LLaMA-3, LLaVA-Phi3, LLaVA-13B and Moondream consistently produced limited-range output.
+
 ## Citation
 If you use the gans-traffic for academic work please cite the following paper:
 
 > Alam, M. S., & Bazilinskyy, P. (2025). Cross or Nah? LLMs Get in the Mindset of a Pedestrian in front of Automated Car with an eHMI. 17th International Conference on Automotive User Interfaces and Interactive Vehicular Applications. Brisbane, QLD, Australia. https://doi.org/10.1145/3744335.3758477
 
 ## Usage of the code
-The code is open-source and free to use. It is aimed for, but not limited to, academic research. We welcome forking of this repository, pull requests, and any contributions in the spirit of open science and open-source code 😍😄 .
-For collaboration or inquiries, contact:
-
-- Md Shadab Alam: [md_shadab_alam@outlook.com](mailto:md_shadab_alam@outlook.com)  
-- Pavlo Bazilinskyy: [pavlo.bazilinskyy@gmail.com](mailto:pavlo.bazilinskyy@gmail.com)
 
 
-# Getting Started
-Tested with Python 3.9.21. To setup the environment run these two commands in a parent folder of the downloaded repository (replace `/` with `\` and possibly add `--user` if on Windows:
+## Getting started
+[![Python Version](https://img.shields.io/badge/python-3.9.21-blue.svg)](https://www.python.org/downloads/release/python-3919/)
+[![Package Manager: uv](https://img.shields.io/badge/package%20manager-uv-green)](https://docs.astral.sh/uv/)
 
-**Step 1:**
+Tested with **Python 3.9.21** and the [`uv`](https://docs.astral.sh/uv/) package manager.  
+Follow these steps to set up the project.
 
-Clone the repository
+**Step 1:** Install `uv`. `uv` is a fast Python package and environment manager. Install it using one of the following methods:
+
+**macOS / Linux (bash/zsh):**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://astral.sh/uv/install.ps1 | iex
+```
+
+**Alternative (if you already have Python and pip):**
+```bash
+pip install uv
+```
+
+**Step 2:** Fix permissions (if needed):t
+
+Sometimes `uv` needs to create a folder under `~/.local/share/uv/python` (macOS/Linux) or `%LOCALAPPDATA%\uv\python` (Windows).  
+If this folder was created by another tool (e.g. `sudo`), you may see an error like:
+```lua
+error: failed to create directory ... Permission denied (os error 13)
+```
+
+To fix it, ensure you own the directory:
+
+### macOS / Linux
+```bash
+mkdir -p ~/.local/share/uv
+chown -R "$(id -un)":"$(id -gn)" ~/.local/share/uv
+chmod -R u+rwX ~/.local/share/uv
+```
+
+### Windows
+```powershell
+# Create directory if it doesn't exist
+New-Item -ItemType Directory -Force "$env:LOCALAPPDATA\uv"
+
+# Ensure you (the current user) own it
+# (usually not needed, but if permissions are broken)
+icacls "$env:LOCALAPPDATA\uv" /grant "$($env:UserName):(OI)(CI)F"
+```
+
+**Step 3:** After installing, verify:
+```bash
+uv --version
+```
+
+**Step 4:** Clone the repository:
 ```command line
 git clone https://github.com/Shaadalam9/llms-av-crowdsourced
+llms-av-crowdsourced
 ```
 
-**Step 2:**
-
-Create a new virtual environment using the .yml file
+**Step 5:** Ensure correct Python version. If you don’t already have Python 3.9.19 installed, let `uv` fetch it:
 ```command line
-conda env create -f environment.yml
+uv python install 3.9.21
 ```
-This will create a new conda environment with all the dependencies specified in the file.
+The repo should contain a .python-version file so `uv` will automatically use this version.
 
-
-**Step 3:**
-
-Activate the virtual environment
+**Step 6:** Create and sync the virtual environment. This will create **.venv** in the project folder and install dependencies exactly as locked in **uv.lock**:
 ```command line
-conda activate myenv
+uv sync --frozen
 ```
 
+**Step 7:** Activate the virtual environment:
 
-**Step 4:**
-
-Download the supplementary material from [4TU Research Data](xxxx) and save them in the current folder.
-
-**Step 5:**
-Download Ollama locally in your system and run it. [Link](https://ollama.com/)
-
-**Step 6:**
-Run the main.py script for analysing the images.
-```command line
-python3 main.py
+**macOS / Linux (bash/zsh):**
+```bash
+source .venv/bin/activate
 ```
 
-**Step 7:**
-Run the analysis.py script for getting the comaprison of the LLMs output and the crowdsourced results.
+**Windows (PowerShell):**
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+**Windows (cmd.exe):**
+```bat
+.\.venv\Scripts\activate.bat
+```
+
+**Step 8:** 
+
+Download Ollama locally in your system and run it. [https://ollama.com/](https://ollama.com/)
+
+
+**Step 9:** Run the code:
 ```command line
 python3 analysis.py
 ```
