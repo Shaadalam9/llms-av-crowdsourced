@@ -39,7 +39,7 @@ irm https://astral.sh/uv/install.ps1 | iex
 pip install uv
 ```
 
-**Step 2:** Fix permissions (if needed):t
+**Step 2:** Fix permissions (if needed):
 
 Sometimes `uv` needs to create a folder under `~/.local/share/uv/python` (macOS/Linux) or `%LOCALAPPDATA%\uv\python` (Windows).  
 If this folder was created by another tool (e.g. `sudo`), you may see an error like:
@@ -129,7 +129,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 - **random_seed** [List of Integers]: A list of seed values for reproducible runs (e.g., `[42]`).  
 - **process_csv_files** [Boolean]: Determines whether raw model output CSVs should be processed and aggregated before analysis. When `true`, the system runs CSV parsing and cleaning steps prior to generating figures or statistics.  
 - **use_history** [Boolean]: Determines whether conversation history is maintained and utilised during processing. When `true`, previous interactions are stored and influence current model responses.  
-- **delete_history_files** [Boolean]: 
+- **delete_history_files** [Boolean]  
 - **max_memory_messages** [Integer]: Specifies the maximum number of previous conversation messages to retain in memory for context (e.g., `6`).  
 - **temperature** [Float]: Adjusts the randomness of the model's response generation. Lower values produce more deterministic outputs, while higher values introduce variability (e.g., `0.8`).  
 - **plotly_template** [String]: Determines the styling template used for graphs and visualisations (e.g., `"plotly_white"`).  
@@ -138,19 +138,19 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 - **base_prompt** [String]: Provides the initial context for the model, setting the stage for how it should interpret its task (e.g., describing the user's perspective as a pedestrian).  
 - **history_intro** [String]: Contains introductory text that precedes the conversation history, informing the model how previous responses may influence its current decision-making.  
 - **current_image_instruction** [String]: Offers specific instructions for interpreting the current image, guiding the model on how to generate its response.  
-- **prompt** [String]: The main directive provided to the model for evaluating the image. This prompt instructs the model to first interpret the meaning of any digital display, then provide a confidence rating in this format: `"Confidence: [numeric value]. Meaning: [briefly explain]"`.  
+- **prompt** [String]: The main directive provided to the model for evaluating the image. This prompt instructs the model to first interpret the meaning of any digital display, then provide a confidence rating in this format: `"Confidence: [numeric value]. Meaning: [briefly explain]"`.
 
 
 
 ## Results
 
-### Model-by-Model Comparison (Without vs With Past History)
+### Model-by-model comparison (Without vs with past history)
 
 ---
 
 #### **BakLLaVA**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![BakLLaVA without memory](figures/scatter_plot_bakllava_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_bakllava_without_memory.html)<br>**Without memory context** | [![BakLLaVA with memory](figures/scatter_plot_bakllava_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_bakllava_with_memory.html)<br>**With memory context** |
 
@@ -158,7 +158,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **Gemma3 12B**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![Gemma3 12B without memory](figures/scatter_plot_gemma3:12b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:12b_without_memory.html) | [![Gemma3 12B with memory](figures/scatter_plot_gemma3:12b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:12b_with_memory.html) |
 
@@ -166,7 +166,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **Gemma3 27B**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![Gemma3 27B without memory](figures/scatter_plot_gemma3:27b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:27b_without_memory.html) | [![Gemma3 27B with memory](figures/scatter_plot_gemma3:27b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_gemma3:27b_with_memory.html) |
 
@@ -174,7 +174,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **Granite3.2 Vision**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![Granite3.2 Vision without memory](figures/scatter_plot_granite3.2-vision_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_granite3.2-vision_without_memory.html) | [![Granite3.2 Vision with memory](figures/scatter_plot_granite3.2-vision_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_granite3.2-vision_with_memory.html) |
 
@@ -182,7 +182,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **LLaMA3.2 Vision**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![LLaMA3.2 Vision without memory](figures/scatter_plot_llama3.2-vision_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llama3.2-vision_without_memory.html) | [![LLaMA3.2 Vision with memory](figures/scatter_plot_llama3.2-vision_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llama3.2-vision_with_memory.html) |
 
@@ -190,7 +190,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **LLaVA-LLaMA3**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![LLaVA-LLaMA3 without memory](figures/scatter_plot_llava-llama3_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-llama3_without_memory.html) | [![LLaVA-LLaMA3 with memory](figures/scatter_plot_llava-llama3_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-llama3_with_memory.html) |
 
@@ -198,7 +198,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **LLaVA-Phi3**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![LLaVA-Phi3 without memory](figures/scatter_plot_llava-phi3_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-phi3_without_memory.html) | [![LLaVA-Phi3 with memory](figures/scatter_plot_llava-phi3_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava-phi3_with_memory.html) |
 
@@ -206,7 +206,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **LLaVA 13B**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![LLaVA 13B without memory](figures/scatter_plot_llava:13b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:13b_without_memory.html) | [![LLaVA 13B with memory](figures/scatter_plot_llava:13b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:13b_with_memory.html) |
 
@@ -214,7 +214,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **LLaVA 34B**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![LLaVA 34B without memory](figures/scatter_plot_llava:34b_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:34b_without_memory.html) | [![LLaVA 34B with memory](figures/scatter_plot_llava:34b_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_llava:34b_with_memory.html) |
 
@@ -222,7 +222,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **MiniCPM-V**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![MiniCPM-V without memory](figures/scatter_plot_minicpm-v_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_minicpm-v_without_memory.html) | [![MiniCPM-V with memory](figures/scatter_plot_minicpm-v_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_minicpm-v_with_memory.html) |
 
@@ -230,7 +230,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **MoonDream**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![MoonDream without memory](figures/scatter_plot_moondream_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_moondream_without_memory.html) | [![MoonDream with memory](figures/scatter_plot_moondream_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_moondream_with_memory.html) |
 
@@ -238,26 +238,26 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 
 #### **DeepSeek VL2**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![DeepSeek VL2 without memory](figures/scatter_plot_deepseek-vl2_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_deepseek-vl2_without_memory.html) | [![DeepSeek VL2 with memory](figures/scatter_plot_deepseek-vl2_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/scatter_plot_deepseek-vl2_with_memory.html) |
 
 ---
 
-#### **All Models (Merged)**
+#### **All models (merged)**
 
-| Without Past History | With Past History |
+| Without past history | With past history |
 |---|---|
 | [![All models without memory](figures/merged_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/merged_without_memory.html) | [![All models with memory](figures/merged_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/merged_with_memory.html) |
 
 ---
 
-#### **Correlation Matrix**
+#### **Correlation matrix**
 
-**Without Past History**  
+**Without past history**  
 [![Correlation matrix without memory](figures/spearman_correlation_matrix_without_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/spearman_correlation_matrix_without_memory.html)  
 
-**With Past History**  
+**With past history**  
 [![Correlation matrix with memory](figures/spearman_correlation_matrix_with_memory.png)](https://htmlpreview.github.io/?https://github.com/Shaadalam9/llms-av-crowdsourced/blob/main/figures/spearman_correlation_matrix_with_memory.html)  
 
 
