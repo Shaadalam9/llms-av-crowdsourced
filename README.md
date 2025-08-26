@@ -129,7 +129,7 @@ Configuration of the project needs to be defined in `llms-av-crowdsourced/config
 - **random_seed** [List of Integers]: A list of seed values for reproducible runs (e.g., `[42]`).  
 - **process_csv_files** [Boolean]: Determines whether raw model output CSVs should be processed and aggregated before analysis. When `true`, the system runs CSV parsing and cleaning steps prior to generating figures or statistics.  
 - **use_history** [Boolean]: Determines whether conversation history is maintained and utilised during processing. When `true`, previous interactions are stored and influence current model responses.  
-- **delete_history_files** [Boolean]  
+- **delete_history_files** [Boolean]: Determines whether previously saved conversation history files should be automatically removed after processing.
 - **max_memory_messages** [Integer]: Specifies the maximum number of previous conversation messages to retain in memory for context (e.g., `6`).  
 - **temperature** [Float]: Adjusts the randomness of the model's response generation. Lower values produce more deterministic outputs, while higher values introduce variability (e.g., `0.8`).  
 - **plotly_template** [String]: Determines the styling template used for graphs and visualisations (e.g., `"plotly_white"`).  
